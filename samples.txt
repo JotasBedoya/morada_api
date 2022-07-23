@@ -1,0 +1,20 @@
+app.get('/', (req, res) => {
+    res.send('hola api get');
+});
+
+app.post('/', (req, res) => {
+    res.send('hola api post');
+});
+
+app.get('/saludar', (req, res) => {
+    res.send(`Saludar ${req.query.nombre}`)
+});
+
+app.post('/sumar', (req, res) => {
+    res.send(`La suma es ${req.body.numero1 + req.body.numero2}`);
+});
+
+app.get('/info/:idUser', (req, res) => {
+    // console.log("req", req);
+    res.send(`Id del usuario ${req.params.idUser}`)
+});
